@@ -19,7 +19,7 @@ void main() {
       "Please enter your department of studies: \n 1. Bio \n 2. Math \n 3. General ");
   department = int.parse(stdin.readLineSync()!);
 
-  if (department == 1 || department == 2) {
+  /*if (department == 1 || department == 2) {
     tuition = 14000;
     if (department == 1) {
       selectedDepartment = "Bio";
@@ -31,6 +31,24 @@ void main() {
     tuition = 1000;
   } else {
     print("Unavailable department!");
+  }*/
+
+  //Lets Change this into a switch:
+  switch (department) {
+    case 1:
+      selectedDepartment = 'Bio';
+      tuition = 14000;
+      break;
+    case 2:
+      selectedDepartment = 'Math';
+      tuition = 14000;
+      break;
+    case 3:
+      selectedDepartment = 'General';
+      tuition = 1000;
+      break;
+    default:
+      selectedDepartment = "Unavailable department!";
   }
 
   print("Hello $name, you are $age years old. you are from $country.");
