@@ -1,8 +1,8 @@
 import 'dart:io';
 
 void main() {
-  String? name, country;
-  int age, department;
+  String? name, country, selectedDepartment;
+  int age, department, tuition = 0;
 
   print("Hello, this is a student data entry!");
 
@@ -19,13 +19,20 @@ void main() {
       "Please enter your department of studies: \n 1. Bio \n 2. Math \n 3. General ");
   department = int.parse(stdin.readLineSync()!);
 
-  print("Hello $name, you are $age years old. you are from $country.");
-
-  if (department == 1 || department == 1) {
-    print("You study $department, and your tuition is 14,000");
+  if (department == 1 || department == 2) {
+    tuition = 14000;
+    if (department == 1) {
+      selectedDepartment = "Bio";
+    } else if (department == 2) {
+      selectedDepartment = "Math";
+    }
   } else if (department == 3) {
-    print("You study $department, and your tuition is 1,000");
+    selectedDepartment = "General";
+    tuition = 1000;
   } else {
     print("Unavailable department!");
   }
+
+  print("Hello $name, you are $age years old. you are from $country.");
+  print("You study $selectedDepartment, and your tuition is $tuition");
 }
